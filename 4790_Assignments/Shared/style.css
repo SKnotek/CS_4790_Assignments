@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.ColoredSidebar{
+	float: left;
+	width: 15%;
+	background: #0094ff;
+	min-height: 920px;
+}
+
+.HeaderStyle{
+	background: #0c20c2;
+	text-align: center;
+	min-width: 900px;
+	background-color: #0c20c2;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+}
