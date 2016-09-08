@@ -1,20 +1,33 @@
 ﻿@{
 	Layout = "~/Shared/_Layout.cshtml";
+	Validation.Add("FirstName", Validator.Required("First Name is required"), Validator.StringLength(25, 2, "Name must be greater than 2 characters but less than 25"));
+	Validation.Add("LastName", Validator.Required("Last Name is required"), Validator.StringLength(25, 2, "Name must be greater than 2 characters but less than 25"));
+	Validation.Add("Major", Validator.Required("Major is required"), Validator.StringLength(50, 2, "Must have a major in the entry"));
+
+	if (IsPost)
+	{
+		var FirstName = Request["FirstName"];
+		var LastName = Request["LastName"];
+		if (Validation.IsValid())
+		{
+			Response.Redirect("~/PageThree.cshtml");
+		}
+		else
+		{
+			Validation.AddFormError("Error on submission");
+		}
+	}
+
 }
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>On page Two</title>
+        <title></title>
     </head>
     <body>
-		@if (IsPost)
-		{
-			Response.Redirect("~/PageThree.cshtml");
-		}else
-		{
-			<form action="" method="post">
-				On a scale from one to ten, how tedious is HTML?<br />
+			<form action="~/PageThree.cshtml" method="post">
+				<p>On a scale from one to ten, how tedious is HTML?</p> 
 				<input type="radio" name="input" value="1" checked />1<br />
 				<input type="radio" name="input" value="2" />2<br />
 				<input type="radio" name="input" value="3" />3<br />
@@ -25,8 +38,13 @@
 				<input type="radio" name="input" value="8" />8<br />
 				<input type="radio" name="input" value="9" />9<br />
 				<input type="radio" name="input" value="10" />10<br />
+				<p>Please enter your first name:</p>
+				<input type="text" placeholder="First name" name="FirstName" />
+				<p>Please enter your last name</p>
+				<input type="text" placeholder="Last Name" name="LastName" />
+				<p>Please enter you major</p>
+				<input type="text" placeholder="Major" name="Major" />
 				<input type="submit" value="Submit" />
 			</form>
-		}
     </body>
 </html>

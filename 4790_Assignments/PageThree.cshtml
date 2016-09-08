@@ -1,5 +1,35 @@
 ﻿@{
 	Layout = "~/Shared/_Layout.cshtml";
+
+	List<string> tableFirstName = new List<string>() {
+		"Jack", "Jill", "Tidus"
+	};
+	List<string> tableLastName = new List<string>() {
+		"Skeleton", "Valentine", "Hill"
+	};
+	List<string> tableMajor = new List<string>()
+	{
+		"MBA", "Criminal Justice", "Redneck"
+	};
+
+	List<string> tableTedious = new List<string>() {
+		"10", "5", "1"
+	};
+
+	//if (Session["TableFirst Name"] == null)
+	//{
+
+	//	Session["TableFirstName"] = tableFirstName;
+	//	Session["TableLastName"] = tableLastName;
+	//	Session["TableMajor"] = tableMajor;
+	//	Session["TableTedious"] = tableTedious;
+	//}
+
+	//tableFirstName = (List<string>)(Session["TableFirstName"]);
+	//tableLastName = (List<string>)(Session["TableLastName"]);
+	//tableMajor = (List<string>)(Session["TableMajor"]);
+	//tableTedious = (List<string>)(Session["TableTedious"]);
+
 }
 
 <!DOCTYPE html>
@@ -8,6 +38,42 @@
         <title>On Page Three</title>
     </head>
     <body>
-
+		<table border="1">
+			<tr>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Major</td>
+				<td>Tedious Level</td>
+			</tr>
+			@for(int i = 0; i < 3; i++)
+			{
+				<tr>
+					<td>@tableFirstName.ElementAt(i)</td>
+					<td>@tableLastName.ElementAt(i)</td>
+					<td>@tableMajor.ElementAt(i)</td>
+					<td>@tableTedious.ElementAt(i)</td>
+				</tr>
+			}
+			@{
+				var tediousInput = Request["input"];
+				var firstName = Request["FirstName"];
+				var lastName = Request["LastName"];
+				var major = Request["Major"];
+				//tableFirstName.Add(firstName);
+				//tableLastName.Add(lastName);
+				//tableMajor.Add(major);
+				//tableTedious.Add(tediousInput);
+				
+				//for (int i = 0; i < tableFirstName.Count; i++)
+				//{
+				<tr>
+					<td>@firstName</td>
+					<td>@lastName</td>
+					<td>@major</td>
+					<td>@tediousInput</td>
+				</tr>
+				//}
+			}
+		</table>
     </body>
 </html>
