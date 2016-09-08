@@ -1,7 +1,4 @@
-﻿body {
-}
-
-.ColoredSidebar{
+﻿.ColoredSidebar{
 	float: left;
 	width: 15%;
 	background: #0094ff;
@@ -17,9 +14,18 @@
 	line-height: 50px;
 	font-size: 24px;
 }
-.Content{
+
+.BodyContent{
 	background-color: #376892;
 	background: #376892;
+}
+
+.RenderedColor{
+	background-color: #376892;
+	background: #376892;
+}
+
+.CenterAndBig {
 	text-align: center;
 	font-size: 36px;
 }

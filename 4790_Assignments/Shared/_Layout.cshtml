@@ -5,14 +5,14 @@
 		<link rel="stylesheet" href="@Href("~/Shared/style.css")" type="text/css" />
     </head>
     <body>
-		<div>
+		<div class="BodyContent">
 			<header class="HeaderStyle">
 				@RenderPage("~/Shared/_header.cshtml")
 			</header>
 			<aside class="ColoredSidebar">
 				@RenderPage("~/Shared/_sidebar.cshtml")
 			</aside>
-			<div class="Content">
+			<div>
 				@RenderBody()
 			</div>
 		</div>

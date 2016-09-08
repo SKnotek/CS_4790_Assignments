@@ -37,7 +37,7 @@
     <head>
         <title>On Page Three</title>
     </head>
-    <body>
+    <body class="RenderedColor">
 		<table border="1">
 			<tr>
 				<td>First Name</td>
@@ -59,20 +59,15 @@
 				var firstName = Request["FirstName"];
 				var lastName = Request["LastName"];
 				var major = Request["Major"];
-				//tableFirstName.Add(firstName);
-				//tableLastName.Add(lastName);
-				//tableMajor.Add(major);
-				//tableTedious.Add(tediousInput);
-				
-				//for (int i = 0; i < tableFirstName.Count; i++)
-				//{
-				<tr>
-					<td>@firstName</td>
-					<td>@lastName</td>
-					<td>@major</td>
-					<td>@tediousInput</td>
-				</tr>
-				//}
+				if (!string.IsNullOrWhiteSpace(firstName))
+				{
+					<tr>
+						<td>@firstName</td>
+						<td>@lastName</td>
+						<td>@major</td>
+						<td>@tediousInput</td>
+					</tr>
+				}
 			}
 		</table>
     </body>
