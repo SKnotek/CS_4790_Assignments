@@ -3,16 +3,22 @@
     <head>
         <title></title>
 		<link rel="stylesheet" href="@Href("~/Shared/style.css")" type="text/css" />
+		<link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="~/scripts/bootstrap.min.js" type="text/javascript" />
     </head>
     <body>
-		<div class="BodyContent">
-			<header class="HeaderStyle">
-				@RenderPage("~/Shared/_header.cshtml")
-			</header>
-			<aside class="ColoredSidebar">
-				@RenderPage("~/Shared/_sidebar.cshtml")
-			</aside>
-			<div>
+		<div class="container">
+			<div class="col-md-12">
+				<header class="col-md-12">
+					@RenderPage("~/Shared/_header.cshtml")
+				</header>
+			</div>
+			<div class="col-md-3">
+				<aside>
+					@RenderPage("~/Shared/_sidebar.cshtml")
+				</aside>
+			</div>
+			<div class="col-md-9">
 				@RenderBody()
 			</div>
 		</div>

@@ -35,40 +35,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="~/scripts/bootstrap.min.js" type="text/javascript" />
+		<link rel="stylesheet" href="~/scripts/jquery-1.9.1.min.js" type="text/javascript" />
+		<link rel="stylesheet" href="~/Content/bootstrap.min.css.map" type="text/css" />
         <title>On Page Three</title>
     </head>
-    <body class="RenderedColor">
-		<table border="1">
-			<tr>
-				<td>First Name</td>
-				<td>Last Name</td>
-				<td>Major</td>
-				<td>Tedious Level</td>
-			</tr>
-			@for(int i = 0; i < 3; i++)
-			{
-				<tr>
-					<td>@tableFirstName.ElementAt(i)</td>
-					<td>@tableLastName.ElementAt(i)</td>
-					<td>@tableMajor.ElementAt(i)</td>
-					<td>@tableTedious.ElementAt(i)</td>
-				</tr>
-			}
-			@{
-				var tediousInput = Request["input"];
-				var firstName = Request["FirstName"];
-				var lastName = Request["LastName"];
-				var major = Request["Major"];
-				if (!string.IsNullOrWhiteSpace(firstName))
+    <body>
+			<table class="table table-hover">
+				<thead>
+					<tr class="">
+						<td><b>First Name</b></td>
+						<td><b>Last Name</b></td>
+						<td><b>Major</b></td>
+						<td><b>Tedious Level</b></td>
+					</tr>
+				</thead>
+				@for (int i = 0; i < 3; i++)
 				{
 					<tr>
-						<td>@firstName</td>
-						<td>@lastName</td>
-						<td>@major</td>
-						<td>@tediousInput</td>
+						<td>@tableFirstName.ElementAt(i)</td>
+						<td>@tableLastName.ElementAt(i)</td>
+						<td>@tableMajor.ElementAt(i)</td>
+						<td>@tableTedious.ElementAt(i)</td>
 					</tr>
-				}
 			}
-		</table>
+				@{
+					var tediousInput = Request["input"];
+					var firstName = Request["FirstName"];
+					var lastName = Request["LastName"];
+					var major = Request["Major"];
+					if (!string.IsNullOrWhiteSpace(firstName))
+					{
+						<tr>
+							<td>@firstName</td>
+							<td>@lastName</td>
+							<td>@major</td>
+							<td>@tediousInput</td>
+						</tr>
+					}
+				}
+			</table>
+		
     </body>
 </html>

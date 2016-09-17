@@ -23,28 +23,40 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="~/scripts/bootstrap.min.js" type="text/javascript" />
         <title></title>
     </head>
-    <body class="RenderedColor">
+    <body>
 			<form action="~/PageThree.cshtml" method="post">
-				<p>On a scale from one to ten, how tedious is HTML?</p> 
-				<input type="radio" name="input" value="1" checked />1<br />
-				<input type="radio" name="input" value="2" />2<br />
-				<input type="radio" name="input" value="3" />3<br />
-				<input type="radio" name="input" value="4" />4<br />
-				<input type="radio" name="input" value="5" />5<br />
-				<input type="radio" name="input" value="6" />6<br />
-				<input type="radio" name="input" value="7" />7<br />
-				<input type="radio" name="input" value="8" />8<br />
-				<input type="radio" name="input" value="9" />9<br />
-				<input type="radio" name="input" value="10" />10<br />
-				<p>Please enter your first name:</p>
-				<input type="text" placeholder="First name" name="FirstName" />
-				<p>Please enter your last name</p>
-				<input type="text" placeholder="Last Name" name="LastName" />
-				<p>Please enter you major</p>
-				<input type="text" placeholder="Major" name="Major" />
-				<input type="submit" value="Submit" />
+				<div class="form-group">
+					<p>On a scale from one to ten, how tedious is HTML?</p>
+		
+						<input type="radio" name="input" value="1" checked />1<br />
+						<input type="radio" name="input" value="2" />2<br />
+						<input type="radio" name="input" value="3" />3<br />
+						<input type="radio" name="input" value="4" />4<br />
+						<input type="radio" name="input" value="5" />5<br />
+						<input type="radio" name="input" value="6" />6<br />
+						<input type="radio" name="input" value="7" />7<br />
+						<input type="radio" name="input" value="8" />8<br />
+						<input type="radio" name="input" value="9" />9<br />
+						<input type="radio" name="input" value="10" />10<br />
+
+				</div>
+				<div class="form-group">
+					<p>Please enter your first name:</p>
+					<input type="text" placeholder="First name" name="FirstName" />
+				</div>
+				<div class="form-group">
+					<p>Please enter your last name</p>
+					<input type="text" placeholder="Last Name" name="LastName" />
+				</div>
+				<div class="form-group">
+					<p>Please enter you major</p>
+					<input type="text" placeholder="Major" name="Major" />
+				</div>
+				<input class="btn btn-primary" type="submit" value="Submit" />
 			</form>
     </body>
 </html>
