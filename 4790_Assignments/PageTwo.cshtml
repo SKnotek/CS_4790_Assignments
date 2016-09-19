@@ -26,10 +26,10 @@
         <title></title>
     </head>
     <body>
-			<form action="~/PageThree.cshtml" method="post">
+			<form action="~/PageThree.cshtml" method="post" class="form-horizontal">
 				<div class="form-group">
-					<p>On a scale from one to ten, how tedious is HTML?</p>
-		
+					<span class="label label-primary">On a scale from one to ten, how tedious is HTML?</span>
+					<br />
 						<input type="radio" name="input" value="1" checked />1<br />
 						<input type="radio" name="input" value="2" />2<br />
 						<input type="radio" name="input" value="3" />3<br />
@@ -44,15 +44,15 @@
 				</div>
 				<div class="form-group form-inline">
 					<label>Please enter your first name:</label>
-					<input type="text" placeholder="First name" name="FirstName" />
+					<input class="form-control" type="text" placeholder="First name" name="FirstName" />
 				</div>
 				<div class="form-group form-inline">
 					<label>Please enter your last name</label>
-					<input type="text" placeholder="Last Name" name="LastName" />
+					<input class="form-control" type="text" placeholder="Last Name" name="LastName" />
 				</div>
 				<div class="form-group form-inline">
 					<label>Please enter you major</label>
-					<input type="text" placeholder="Major" name="Major" />
+					<input class="form-control" type="text" placeholder="Major" name="Major" />
 				</div>
 				<input class="btn btn-primary" type="submit" value="Submit" />
 			</form>
